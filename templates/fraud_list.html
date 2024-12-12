@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block head%} 
+    <title>Line 詐騙 ID 列表</title>
+{% endblock%}
+{% block body%} 
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">編號</th>
+        <th scope="col">帳號</th>
+        <th scope="col">通報日期</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for cell in data["result"]["records"] %}
+        <tr>
+            <!-- <th scope="row">1</th> -->
+            <td>{{ cell.編號 }}</td>
+            <td>{{ cell.帳號 }}</td>
+            <td>{{ cell.通報日期 }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock%}
